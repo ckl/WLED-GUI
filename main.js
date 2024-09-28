@@ -37,7 +37,7 @@ var settings;
 function createWindow() {
   log.debug("Create browser window");
   win = new BrowserWindow({
-    width: 1263,
+    width: 450,
     height: 900,
     show: false,
     webPreferences: {

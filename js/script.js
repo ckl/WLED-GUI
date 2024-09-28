@@ -51,23 +51,23 @@ function showLights() {
     var oldTxt = document.getElementById("lights").innerHTML;
     for (let index = 0; index < lights.length; index++) {
         const element = lights[index];
-        txt += "<div class=\"light\" onclick=\"goToWled(" + index + ")\" style=\"cursor: pointer;\">\n<br>\n";
-        // Light mode
-        if (ui.theme.base == "light") {
-            txt += "<img src=\"images/icon_power.png\" id=\"img" + index + "\" class=\"darkicon ";
-        }
-        else {
-            txt += "<img src=\"images/icon_power.png\" id=\"img" + index + "\" class=\"icon ";
-        }
-        if (element.on === true) {
-            txt += "on";
-        }
-        txt += "\" onclick=\"toggleLight(" + index + ");\" height=\"75\">\n";
-        txt += "<h5>" + element.name + "</h5>\n" + element.ip;
-        if (element.online === false) {
-            txt += " (Offline)\n";
-        }
-        txt += "<br><br></div><hr>";
+		txt += "<div class=\"light\" onclick=\"goToWled(" + index + ")\" style=\"cursor: pointer;\">\n";
+		// Light mode
+		if (ui.theme.base == "light") {
+			txt += "<img src=\"images/icon_power.png\" id=\"img" + index + "\" class=\"darkicon ";
+		}
+		else {
+			txt += "<img src=\"images/icon_power.png\" id=\"img" + index + "\" class=\"icon ";
+		}
+		if (element.on === true) {
+			txt += "on";
+		}
+		txt += "\" onclick=\"toggleLight(" + index + ");\" height=\"55\">\n";
+		txt += "<h5>" + element.name + "</h5>\n" + element.ip;
+		if (element.online === false) {
+			txt += " (Offline)\n";
+		}
+		txt += "</div><hr>";
     }
     if (txt !== oldTxt) {
         document.getElementById("lights").innerHTML = txt;
@@ -113,7 +113,7 @@ function getStatus() {
             localStorage.setItem("lights", JSON.stringify(lights));
             showLights();
         }
-        xhr.send();
+        // xhr.send();
     }
 }
 
