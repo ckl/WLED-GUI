@@ -113,7 +113,7 @@ function getStatus() {
             localStorage.setItem("lights", JSON.stringify(lights));
             showLights();
         }
-        // xhr.send();
+        xhr.send();
     }
 }
 
