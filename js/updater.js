@@ -2,11 +2,11 @@
 const wledGuiVersion = "0.7.2";
 log.debug("Current WLED-GUI Version: " + wledGuiVersion);
 
-if (sessionStorage.getItem("updateReminder") === null) {
-    if (localStorage.getItem("remindLaterTime") === null || (Date.now() - localStorage.getItem("remindLaterTime")) >= 259200000) {  // 3 days
-        checkForUpdate();
-    }
-}
+// if (sessionStorage.getItem("updateReminder") === null) {
+//     if (localStorage.getItem("remindLaterTime") === null || (Date.now() - localStorage.getItem("remindLaterTime")) >= 259200000) {  // 3 days
+//         checkForUpdate();
+//     }
+// }
 
 // checks if a update is available
 function checkForUpdate() {
